@@ -9,13 +9,15 @@ class UsersController < ApplicationController
       flash[:success] = "Signup success!"
       redirect_to top_page_url
     else
-      redirect_to top_page_url
+      flash[:error] = "Signup failed."
+      render :new
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
+

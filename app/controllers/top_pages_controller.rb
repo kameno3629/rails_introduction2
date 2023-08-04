@@ -1,8 +1,9 @@
+
 class TopPagesController < ApplicationController
   def index
   end
 
   def help
-    render :new
+    render :help
   end
 end
